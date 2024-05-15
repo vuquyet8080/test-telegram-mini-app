@@ -9,37 +9,27 @@ function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <div className="bg-white">
-      <div>
+    <div className="flex flex-col items-center justify-center px-10 pt-10 md:px-20 gap-y-4">
+      <div className="flex flex-row gap-x-4">
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
-        <h1 className="text-3xl font-bold underline">Hello world!</h1>
         <a href="https://react.dev" target="_blank">
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>Vite + React</h1>
+      <h1 className="text-2xl text-gray-300">Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+        <button
+          onClick={() =>
+            WebApp.showAlert(`Hello World! Current count is ${count}`)
+          }
+          type="button"
+          className="focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900"
+        >
+          Show Alert
         </button>
-        <div className="card">
-          <button
-            onClick={() =>
-              WebApp.showAlert(`Hello World! Current count is ${count}`)
-            }
-          >
-            Show Alert
-          </button>
-        </div>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </div>
   );
 }
